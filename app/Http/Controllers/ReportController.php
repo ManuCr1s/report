@@ -34,7 +34,7 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return 'Hola desde el store';
     }
 
     /**
