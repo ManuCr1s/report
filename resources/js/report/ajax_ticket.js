@@ -1,15 +1,21 @@
+import ENV from './routes_report.js';
 $(document).ready(function(){
-    let idForm = $('#form_ticket'),
-        token =$('meta[name="csrf_token"]').attr('content'),
-        date = {"token":token},
-        ruta ='{{route("dates")}}';
+    let idForm = $('#form_ticket');
     idForm.on("submit",function(event){
         event.preventDefault();
+        let ruta = ENV.dates,
+            formData = $(this).serialize();
         $.ajax({
             url:ruta,
-            method:'POST',
-            data:date
+            type:'POST',
+            data:formData,
+            dataType:'json',
+            success:function(){
+                console.log('Bien');
+            },
+            error:function(){
+                console.log('Error');
+            }
         });
     })
-
 })
