@@ -25,8 +25,8 @@ class ReportController extends Controller
      */
     public function create()
     {
-        $report = Report::all();
-        return response()->json($report);
+        $report = Report::select('code','asunto','date_at')->get();
+        return datatables()->of($report)->toJson();
     }
 
     /**

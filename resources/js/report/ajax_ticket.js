@@ -11,6 +11,7 @@ $(document).ready(function(){
             data:formData,
             dataType:'json',
             success:function(response){
+                location.reload();
                 console.log(response);
             },
             error:function(error){

@@ -14,6 +14,7 @@
     "dependencies": {
         "chart.js": "^4.2.1",
         "cleave.js": "^1.6.0",
+        "datatables.net-dt": "^1.13.4",
         "jquery": "^3.2.1"
     }
 }
