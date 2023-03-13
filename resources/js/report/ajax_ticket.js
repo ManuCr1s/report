@@ -10,11 +10,11 @@ $(document).ready(function(){
             type:'POST',
             data:formData,
             dataType:'json',
-            success:function(){
-                console.log('Bien');
+            success:function(response){
+                console.log(response);
             },
-            error:function(){
-                console.log('Error');
+            error:function(error){
+                console.log(error.response);
             }
         });
     })

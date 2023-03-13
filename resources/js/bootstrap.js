@@ -35,3 +35,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // });
 import $ from 'jquery';
 window.$ = $;
+
+import Cleave from 'cleave.js';
+window.Cleave = Cleave;
