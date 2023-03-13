@@ -39,5 +39,6 @@ window.$ = $;
 import Cleave from 'cleave.js';
 window.Cleave = Cleave;
 
-import c3 from 'c3';
-import d3 from 'd3';
+
+
+
