@@ -12,7 +12,7 @@
         "vite": "^4.1.4"
     },
     "dependencies": {
-        "c3": "^0.7.20",
+        "chart.js": "^4.2.1",
         "cleave.js": "^1.6.0",
         "jquery": "^3.2.1"
     }
