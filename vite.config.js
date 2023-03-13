@@ -18,5 +18,9 @@ export default defineConfig({
         //         },
         //     },
         // }),
-    ],
+    ],  build: {
+        rollupOptions: {
+          external: ['c3','d3']
+        }
+      }
 });
