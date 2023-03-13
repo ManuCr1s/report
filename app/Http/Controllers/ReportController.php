@@ -25,7 +25,8 @@ class ReportController extends Controller
      */
     public function create()
     {
-        //
+        $report = Report::all();
+        return response()->json($report);
     }
 
     /**
