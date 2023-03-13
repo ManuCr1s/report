@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('reports', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('code');
-            $table->string('asunto');
-            $table->dateTime('date_at',$precision=3);
+            $table->string('asunto')->nullable();
+            $table->dateTime('date_at',$precision=3)->nullable();
             $table->dateTime('created_at', $precision = 3);
             $table->dateTime('updated_at', $precision = 3);
         });

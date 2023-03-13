@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Models\Report;
 
 class ReportController extends Controller
 {
@@ -34,7 +36,22 @@ class ReportController extends Controller
      */
     public function store(Request $request)
     {
-        return 'Hola desde el store';
+        $validator = Validator::make(
+            $request->only('ticket'),
+            [
+                'ticket'=> 'required|min:31'
+            ]
+        );
+        $errors = $validator->errors();
+        if ($validator->fails()){
+            return response()->json(['error'=>'El codigo ingresado no es correcto']);
+        }
+        $report = new Report;
+        $report->code = $request->input('ticket');
+        $report->asunto = $request->input('asunto');
+        $report->date_at = $request->input('date_at');
+        $report->save();
+        return response()->json(['success'=>'Se ingreso correctamente']);
     }
 
     /**
